@@ -1,5 +1,5 @@
 //
-//  ToDoTableViewController.swift
+//  TodosTableViewController.swift
 //  ToDoApp
 //
 //  Created by Klaudia on 27.01.2017.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ToDoTableViewController: UITableViewController {
+class TodosTableViewController: UITableViewController {
     
+    @IBOutlet weak var todosTableView: UITableView!
     var listData = [[String: AnyObject]]()
 
     override func viewDidLoad() {
@@ -26,7 +27,6 @@ class ToDoTableViewController: UITableViewController {
             } else {
                 do {
                     self.listData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [[String: AnyObject]]
-                    
                     self.tableView.reloadData()
                 } catch let error as NSError{
                     print(error)
@@ -40,6 +40,19 @@ class ToDoTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "Show" {
+            
+            if let detailsViewController = segue.destination as? DetailsViewController,
+                let cell = sender as? UITableViewCell,
+                let indexPath = todosTableView.indexPath(for: cell)
+            {
+                let todo = self.listData[indexPath.row]
+                detailsViewController.todo = todo            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,7 +78,6 @@ class ToDoTableViewController: UITableViewController {
         
         let item = self.listData[indexPath.row]
         cell.textLabel?.text = item["name"] as? String
-        print(self.listData.count)
 
         return cell
     }
