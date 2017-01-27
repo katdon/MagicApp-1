@@ -26,7 +26,7 @@ class DetailsViewController: UIViewController {
             idLabel.text = todo["_id"] as! String?
             nameLabel.text = todo["name"] as! String?
             noteLabel.text = todo["note"] as! String?
-            completedLabel.text = todo["completed"] as! String?
+          //  completedLabel.text = String(todo["completed"]) as! String?
             
             createdAtLabel.text = todo["createdAt"] as! String?
             updatedAtLabel.text = todo["updatedAt"] as! String?

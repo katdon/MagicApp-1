@@ -44,7 +44,7 @@ class TodosTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if segue.identifier == "Show" {
+        if segue.identifier == "ShowDetails" {
             
             if let detailsViewController = segue.destination as? DetailsViewController,
                 let cell = sender as? UITableViewCell,
