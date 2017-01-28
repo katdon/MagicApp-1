@@ -14,6 +14,13 @@ class AddViewController: UIViewController {
     @IBOutlet weak var completedFIeld: UITextField!
     @IBOutlet weak var noteField: UITextField!
     @IBOutlet weak var nameField: UITextField!
+    
+    @IBOutlet weak var silderValueLabel: UILabel!
+    @IBOutlet weak var completedSlider: UISlider!
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        silderValueLabel.text = "\(sender.value) %"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
