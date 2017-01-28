@@ -11,7 +11,7 @@ import UIKit
 class AddViewController: UIViewController {
     
     @IBOutlet weak var priorityField: UITextField!
-    @IBOutlet weak var completedFIeld: UITextField!
+    //@IBOutlet weak var completedFIeld: UITextField!
     @IBOutlet weak var noteField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     
@@ -19,7 +19,7 @@ class AddViewController: UIViewController {
     @IBOutlet weak var completedSlider: UISlider!
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
-        silderValueLabel.text = "\(sender.value) %"
+        silderValueLabel.text = "\(Int(sender.value)) %"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +41,10 @@ class AddViewController: UIViewController {
         var request = URLRequest(url: myUrl!)
         request.httpMethod = "POST"
         
+        let completed = String(Int(completedSlider.value))
+        
         guard let name = nameField.text,
             let note = noteField.text,
-            let completed = completedFIeld.text,
             let priority = priorityField.text
             else {
                 print("Guard is coming..")
@@ -66,7 +67,7 @@ class AddViewController: UIViewController {
                 print("error=\(error)")
                 return
             }
-            
+
             print("response = \(response)")
             
             do {
@@ -75,6 +76,7 @@ class AddViewController: UIViewController {
                 if let parseJSON = json {
                     let message = parseJSON["message"] as? String
                     print("message: \(message)")
+                    
                 }
             } catch {
                 print(error)
@@ -90,9 +92,11 @@ class AddViewController: UIViewController {
         
         wyslij()
         
-        let myAlert = UIAlertController(title: "Alert", message: "Are you sure?", preferredStyle: .actionSheet)
+        let myAlert = UIAlertController(title: "", message: "Added!", preferredStyle: .actionSheet)
         
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {
+            action in self.performSegue(withIdentifier: "backToTodos", sender: self)
+        })
         
         myAlert.addAction(okAction)
         
