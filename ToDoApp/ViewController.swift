@@ -19,7 +19,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func viewWillLayoutSubviews() {
+        Style.loadTheme()
+        
+        self.view.backgroundColor = Style.backgroundColor
+        self.navigationController?.navigationBar.barStyle = Style.barStyle
+        self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
+    }
 
 }
 
