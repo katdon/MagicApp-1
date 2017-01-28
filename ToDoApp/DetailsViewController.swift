@@ -10,6 +10,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    @IBOutlet weak var priotityLabel: UILabel!
     @IBOutlet weak var completedLabel: UILabel!
     @IBOutlet weak var updatedAtLabel: UILabel!
     @IBOutlet weak var noteLabel: UILabel!
@@ -21,13 +22,11 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            print(todo)
-        print("po probie")
             idLabel.text = todo["_id"] as! String?
             nameLabel.text = todo["name"] as! String?
             noteLabel.text = todo["note"] as! String?
-          //  completedLabel.text = String(todo["completed"]) as! String?
-            
+            completedLabel.text = todo["completed"] as! String?
+            priotityLabel.text = todo["priority"] as! String?
             createdAtLabel.text = todo["createdAt"] as! String?
             updatedAtLabel.text = todo["updatedAt"] as! String?
         // Do any additional setup after loading the view.
