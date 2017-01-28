@@ -197,6 +197,12 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="completedFIeld" destination="c3I-op-8C7" id="8qE-L7-NQM"/>
+                        <outlet property="nameField" destination="Kh1-Na-gqH" id="Ya9-Cd-LQW"/>
+                        <outlet property="noteField" destination="9oR-cO-z0L" id="lhe-2n-J3J"/>
+                        <outlet property="priorityField" destination="C25-fc-Vt9" id="68i-0A-0YE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oA-Gi-fBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
