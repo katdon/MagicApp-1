@@ -17,7 +17,6 @@ class EditViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var noteField: UITextField!
 
-    
     var taskID: String = "#"
     var name: String = ""
     var note: String = ""
@@ -44,6 +43,72 @@ class EditViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func editTask() {
+        let url:String = "https://secret-badlands-37403.herokuapp.com/api/todos/" + taskID
+        print(taskID)
+        
+        let myUrl = URL(string: url)
+        
+        var request = URLRequest(url: myUrl!)
+        request.httpMethod = "PUT"
+        
+        let completed = String(Int(completedValue.value))
+        
+        guard let name = nameField.text,
+            let note = noteField.text,
+            let priority = priorityField.text
+            else {
+                print("Guard is coming..")
+                return
+        }
+        
+        let mapDict = ["note" : "First", "completed" : "Second"]
+        let json = [ "name" : name, "note" : note, "completed" : completed, "priority" : priority, "dict" : mapDict] as [String : Any]
+        
+        let postString = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+        
+        request.httpBody = postString
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data: Data?, response: URLResponse?, error: Error?) in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            print("response = \(response)")
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                if let parseJSON = json {
+                    let message = parseJSON["message"] as? String
+                    print("message: \(message)")
+                    
+                }
+            } catch {
+                print(error)
+            }
+        }
+        
+        task.resume()
+    }
+    
+    @IBAction func editButtontapped(_ sender: Any) {
+        
+        editTask()
+        
+        let myAlert = UIAlertController(title: "", message: "Edited!", preferredStyle: .actionSheet)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        myAlert.addAction(okAction)
+        
+        self.present(myAlert, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
