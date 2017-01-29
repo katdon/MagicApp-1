@@ -38,15 +38,19 @@ class DetailsViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "EditTask" {
+            if let editViewController = segue.destination as? EditViewController {
+                
+            editViewController.taskID = idLabel.text!
+            editViewController.note = noteLabel.text!
+            editViewController.name = nameLabel.text!
+            editViewController.priority = priotityLabel.text!
+            editViewController.completed = completedLabel.text!
+                
+            }
+        }
     }
-    */
-
 }
 

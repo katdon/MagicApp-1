@@ -17,6 +17,7 @@
 		41735EED1E3BEF44006DFD9E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41735EEC1E3BEF44006DFD9E /* DetailsViewController.swift */; };
 		41B382581E3CBC8C00794671 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B382571E3CBC8C00794671 /* Style.swift */; };
 		41B3825A1E3CC01400794671 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B382591E3CC01400794671 /* SettingsViewController.swift */; };
+		41B3825D1E3D6A3100794671 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3825C1E3D6A3100794671 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		41735EEC1E3BEF44006DFD9E /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		41B382571E3CBC8C00794671 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		41B382591E3CC01400794671 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		41B3825C1E3D6A3100794671 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				41B382591E3CC01400794671 /* SettingsViewController.swift */,
 				4126E7271E3CA952006C5535 /* AddViewController.swift */,
 				41735EEC1E3BEF44006DFD9E /* DetailsViewController.swift */,
+				41B3825C1E3D6A3100794671 /* EditViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41B3825D1E3D6A3100794671 /* EditViewController.swift in Sources */,
 				4126E7281E3CA952006C5535 /* AddViewController.swift in Sources */,
 				41B382581E3CBC8C00794671 /* Style.swift in Sources */,
 				41B3825A1E3CC01400794671 /* SettingsViewController.swift in Sources */,
