@@ -12,16 +12,13 @@ class TodosTableViewController: UITableViewController {
     
     @IBOutlet weak var todosTableView: UITableView!
     var listData = [[String: AnyObject]]()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    func load() {
         let url:String = "https://secret-badlands-37403.herokuapp.com/api/todos"
-        
         let urlRequest = URL(string: url)
         
         URLSession.shared.dataTask(with: urlRequest!, completionHandler: {
-          (data, response, error) in
+            (data, response, error) in
             if(error != nil) {
                 print(error.debugDescription)
             } else {
@@ -33,8 +30,17 @@ class TodosTableViewController: UITableViewController {
                 }
             }
         }).resume()
-        
-        
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        load()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        load()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

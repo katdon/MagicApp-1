@@ -103,7 +103,9 @@ class EditViewController: UIViewController {
         
         let myAlert = UIAlertController(title: "", message: "Edited!", preferredStyle: .actionSheet)
         
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {
+            action in self.performSegue(withIdentifier: "backEdit", sender: self)
+        })
         
         myAlert.addAction(okAction)
         
