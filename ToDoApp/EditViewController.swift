@@ -111,17 +111,33 @@ class EditViewController: UIViewController {
     
     @IBAction func editButtontapped(_ sender: Any) {
         
-        editTask()
-        
-        let myAlert = UIAlertController(title: "", message: "Edited!", preferredStyle: .actionSheet)
-        
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: {
-            action in self.performSegue(withIdentifier: "backEdit", sender: self)
-        })
-        
-        myAlert.addAction(okAction)
-        
-        self.present(myAlert, animated: true, completion: nil)
+        if (priorityField.text == "" || nameField.text == "" || noteField.text == "") {
+            
+            let myInfoAlert = UIAlertController(title: "", message: "All fields must be filled out!", preferredStyle: .actionSheet)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            myInfoAlert.addAction(okAction)
+            
+            self.present(myInfoAlert, animated: true, completion: nil)
+
+            
+        } else {
+            
+            editTask()
+            
+            let myAlert = UIAlertController(title: "", message: "Edited!", preferredStyle: .actionSheet)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: {
+                action in self.performSegue(withIdentifier: "backEdit", sender: self)
+            })
+            
+            myAlert.addAction(okAction)
+            
+            self.present(myAlert, animated: true, completion: nil)
+
+            
+        }
     }
 
     /*
