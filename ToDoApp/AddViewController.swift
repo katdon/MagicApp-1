@@ -10,6 +10,19 @@ import UIKit
 
 class AddViewController: UIViewController {
     
+    
+    @IBOutlet weak var priorityLabel: UILabel!
+    
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var noteLabel: UILabel!
+    
+    
+    @IBOutlet weak var completedLabel: UILabel!
+    
+    
+    
     @IBOutlet weak var priorityField: UITextField!
     //@IBOutlet weak var completedFIeld: UITextField!
     @IBOutlet weak var noteField: UITextField!
@@ -112,5 +125,18 @@ class AddViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Style.loadTheme()
+        
+        self.view.backgroundColor = Style.backgroundColor
+        self.navigationController?.navigationBar.barStyle = Style.barStyle
+        self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
+        self.nameLabel.textColor = Style.textColor
+        self.noteLabel.textColor = Style.textColor
+        self.completedLabel.textColor = Style.textColor
+        self.priorityLabel.textColor = Style.textColor
+    }
 
 }
