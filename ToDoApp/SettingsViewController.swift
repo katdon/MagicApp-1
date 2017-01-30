@@ -12,6 +12,7 @@ class SettingsViewController : UIViewController {
     
     @IBOutlet weak var darkModeSwitch: UISwitch!
     
+    @IBOutlet weak var darkModeLabel: UILabel!
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -56,7 +57,7 @@ class SettingsViewController : UIViewController {
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barStyle = Style.barStyle
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
-        //self.darkModeLabel.textColor = Style.textColor
+        self.darkModeLabel.textColor = Style.textColor
     }
     
 }
