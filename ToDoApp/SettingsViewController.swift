@@ -13,6 +13,14 @@ class SettingsViewController : UIViewController {
     @IBOutlet weak var darkModeSwitch: UISwitch!
     
     @IBOutlet weak var darkModeLabel: UILabel!
+    
+    @IBOutlet weak var authors: UILabel!
+    
+    @IBOutlet weak var stackView: UIStackView!
+    
+    @IBOutlet weak var smallView: UIView!
+    
+    
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -58,6 +66,9 @@ class SettingsViewController : UIViewController {
         self.navigationController?.navigationBar.barStyle = Style.barStyle
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
         self.darkModeLabel.textColor = Style.textColor
+        self.authors.textColor = Style.textColor
+        self.stackView.backgroundColor = Style.backgroundColor
+        self.smallView.backgroundColor = Style.backgroundColor
     }
     
 }
