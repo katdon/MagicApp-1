@@ -13,6 +13,7 @@ class TodosTableViewController: UITableViewController {
     @IBOutlet weak var todosTableView: UITableView!
     var listData = [[String: AnyObject]]()
     
+    
     func load() {
         let url:String = "https://secret-badlands-37403.herokuapp.com/api/todos"
         let urlRequest = URL(string: url)
@@ -42,6 +43,7 @@ class TodosTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         load()
+        self.tableView.backgroundColor = Style.backgroundColor
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -89,6 +91,10 @@ class TodosTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+        cell.textLabel?.textColor = Style.textColor
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -142,6 +148,7 @@ class TodosTableViewController: UITableViewController {
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barStyle = Style.barStyle
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
+        self.tableView.backgroundColor = Style.backgroundColor
     }
 
 }
