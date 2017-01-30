@@ -16,6 +16,18 @@ class EditViewController: UIViewController {
     @IBOutlet weak var completedValue: UISlider!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var noteField: UITextField!
+    
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var noteLabel: UILabel!
+    
+    @IBOutlet weak var completedLabel1: UILabel!
+    
+    @IBOutlet weak var priorityLabel: UILabel!
+    
+    
+    
 
     var taskID: String = "#"
     var name: String = ""
@@ -129,6 +141,12 @@ class EditViewController: UIViewController {
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barStyle = Style.barStyle
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
+        self.nameLabel.textColor = Style.textColor
+        self.noteLabel.textColor = Style.textColor
+        self.completedLabel.textColor = Style.textColor
+        self.priorityLabel.textColor = Style.textColor
+        self.completedLabel1.textColor = Style.textColor
+        
     }
 
 }

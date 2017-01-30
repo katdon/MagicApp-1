@@ -35,6 +35,7 @@ class TodosTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.reloadData()
         load()
     }
 

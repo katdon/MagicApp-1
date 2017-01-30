@@ -21,6 +21,7 @@ class AddViewController: UIViewController {
     
     @IBOutlet weak var completedLabel: UILabel!
     
+    @IBOutlet weak var sliderValue: UILabel!
     
     
     @IBOutlet weak var priorityField: UITextField!
@@ -137,6 +138,7 @@ class AddViewController: UIViewController {
         self.noteLabel.textColor = Style.textColor
         self.completedLabel.textColor = Style.textColor
         self.priorityLabel.textColor = Style.textColor
+        self.sliderValue.textColor = Style.textColor
     }
 
 }
