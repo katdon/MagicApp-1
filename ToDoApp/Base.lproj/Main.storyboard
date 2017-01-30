@@ -421,35 +421,35 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yh-Ki-CJn">
-                                                <rect key="frame" x="0.0" y="110" width="343" height="55"/>
+                                                <rect key="frame" x="0.0" y="110" width="343" height="54.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScK-k6-d35">
-                                                <rect key="frame" x="0.0" y="165" width="343" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="164.5" width="343" height="54.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2t-dE-vLT">
-                                                <rect key="frame" x="0.0" y="219.5" width="343" height="55"/>
+                                                <rect key="frame" x="0.0" y="219" width="343" height="55"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQD-ZF-UNb">
-                                                <rect key="frame" x="0.0" y="274.5" width="343" height="54"/>
+                                                <rect key="frame" x="0.0" y="274" width="343" height="55"/>
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="4aX-Pf-mu5">
-                                                        <rect key="frame" x="-2" y="0.0" width="278.5" height="55"/>
+                                                        <rect key="frame" x="-2" y="0.0" width="278.5" height="56"/>
                                                         <connections>
                                                             <action selector="changeValueSlider:" destination="nmf-nf-nNL" eventType="valueChanged" id="ARq-Xc-ajI"/>
                                                             <action selector="sliderValueChanged:" destination="7y6-Rv-hSP" eventType="valueChanged" id="1gl-DW-mSM"/>
                                                         </connections>
                                                     </slider>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOx-Ab-8QX">
-                                                        <rect key="frame" x="274.5" y="0.0" width="68.5" height="54"/>
+                                                        <rect key="frame" x="274.5" y="0.0" width="68.5" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -460,19 +460,19 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-HH-UyE">
-                                                <rect key="frame" x="0.0" y="328.5" width="343" height="55"/>
+                                                <rect key="frame" x="0.0" y="329" width="343" height="55"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Priority" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFQ-tU-kJQ">
-                                                <rect key="frame" x="0.0" y="383.5" width="343" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="384" width="343" height="54.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQg-4K-IwN">
-                                                <rect key="frame" x="0.0" y="438" width="343" height="55"/>
+                                                <rect key="frame" x="0.0" y="438.5" width="343" height="54.5"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us7-n1-02y">
                                                 <rect key="frame" x="0.0" y="493" width="343" height="55"/>
@@ -596,7 +596,18 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Tasks" id="lEz-CJ-5bq"/>
+                    <navigationItem key="navigationItem" title="Tasks" id="lEz-CJ-5bq">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="diA-ca-8Io">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="Tch-rM-OWd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Py0-iC-1wj">
+                            <connections>
+                                <segue destination="6Rl-MC-gZa" kind="show" id="QCA-Ar-mvk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="todosTableView" destination="Nx1-GK-Dbh" id="Uo3-Zs-QZc"/>
                     </connections>
@@ -836,6 +847,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="fWk-PY-jmo"/>
         <segue reference="jwF-yS-Lcb"/>
+        <segue reference="gOq-q3-JXG"/>
     </inferredMetricsTieBreakers>
 </document>
