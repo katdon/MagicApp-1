@@ -47,21 +47,11 @@ class SettingsViewController : UIViewController {
         
         Style.loadTheme()
         style()
+        
+        
     }
     
     func style() {
-        self.view.backgroundColor = Style.backgroundColor
-        self.navigationController?.navigationBar.barStyle = Style.barStyle
-        self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
-        
-        //self.darkModeLabel.textColor = Style.textColor
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        Style.loadTheme()
-        
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barStyle = Style.barStyle
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
@@ -69,6 +59,14 @@ class SettingsViewController : UIViewController {
         self.authors.textColor = Style.textColor
         self.stackView.backgroundColor = Style.backgroundColor
         self.smallView.backgroundColor = Style.backgroundColor
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Style.loadTheme()
+        
+        style()
     }
     
 }
