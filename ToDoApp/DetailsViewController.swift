@@ -71,7 +71,7 @@ class DetailsViewController: UIViewController {
     }
     
     func deleteTask() {
-        let url:String = "https://secret-badlands-37403.herokuapp.com/api/todos/" + taskID
+        let url:String = "https://magic-todo.herokuapp.com/api/todos/" + taskID
         
         let myUrl = URL(string: url)
         

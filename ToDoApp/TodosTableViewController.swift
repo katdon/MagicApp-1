@@ -15,7 +15,7 @@ class TodosTableViewController: UITableViewController {
     
     
     func load() {
-        let url:String = "https://secret-badlands-37403.herokuapp.com/api/todos"
+        let url:String = "https://magic-todo.herokuapp.com/api/todos"
         let urlRequest = URL(string: url)
         
         URLSession.shared.dataTask(with: urlRequest!, completionHandler: {

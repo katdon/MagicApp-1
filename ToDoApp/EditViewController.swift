@@ -25,9 +25,6 @@ class EditViewController: UIViewController {
     @IBOutlet weak var completedLabel1: UILabel!
     
     @IBOutlet weak var priorityLabel: UILabel!
-    
-    
-    
 
     var taskID: String = "#"
     var name: String = ""
@@ -56,7 +53,7 @@ class EditViewController: UIViewController {
     }
     
     func editTask() {
-        let url:String = "https://secret-badlands-37403.herokuapp.com/api/todos/" + taskID
+        let url:String = "https://magic-todo.herokuapp.com/api/todos/" + taskID
         print(taskID)
         
         let myUrl = URL(string: url)

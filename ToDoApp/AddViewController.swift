@@ -48,7 +48,7 @@ class AddViewController: UIViewController {
     }
     
     func wyslij() {
-        let url:String = "https://secret-badlands-37403.herokuapp.com/api/todos"
+        let url:String = "https://magic-todo.herokuapp.com/api/todos"
         
         let myUrl = URL(string: url)
         
