@@ -104,13 +104,16 @@ class AddViewController: UIViewController {
     
     @IBAction func addNewTask(_ sender: Any) {
         
+        //TodosTableViewController
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodosTableViewController") as UIViewController
+        
         if (priorityField.text != "" && nameField.text != "" && noteField.text != "")
         {
             wyslij()
-            let myAlert = UIAlertController(title: "", message: "Added!", preferredStyle: .actionSheet)
+            let myAlert = UIAlertController(title: "Success", message: "Added!", preferredStyle: .actionSheet)
         
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {
-                action in self.performSegue(withIdentifier: "backToTodos", sender: self)
+                _ in self.show(vc, sender: self)
             })
         
             myAlert.addAction(okAction)
@@ -118,8 +121,8 @@ class AddViewController: UIViewController {
             self.present(myAlert, animated: true, completion: nil)
         }
         else {
-            let myAlert1 = UIAlertController(title: "", message: "No added!", preferredStyle: .actionSheet)
-            let noOkAction = UIAlertAction(title: "Fill in the blanks!", style: .default, handler: nil)
+            let myAlert1 = UIAlertController(title: "Warning", message: "No added! Fill in the blanks!", preferredStyle: .actionSheet)
+            let noOkAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             
             myAlert1.addAction(noOkAction)
             self.present(myAlert1, animated: true, completion: nil)
