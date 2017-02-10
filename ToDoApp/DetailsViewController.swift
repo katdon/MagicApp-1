@@ -130,13 +130,7 @@ class DetailsViewController: UIViewController {
     
     }
     
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadTask()
-        Style.loadTheme()
-        
+    func style() {
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barStyle = Style.barStyle
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
@@ -150,6 +144,14 @@ class DetailsViewController: UIViewController {
         self.priorityLabel1.textColor = Style.textColor
         self.viewId.backgroundColor = Style.backgroundColor
         self.viewEmpty.backgroundColor = Style.backgroundColor
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadTask()
+        Style.loadTheme()
+        style()
+        
     }
 }
 

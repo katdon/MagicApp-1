@@ -146,11 +146,7 @@ class EditViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        Style.loadTheme()
-        
+    func style() {
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barStyle = Style.barStyle
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
@@ -159,6 +155,14 @@ class EditViewController: UIViewController {
         self.completedLabel.textColor = Style.textColor
         self.priorityLabel.textColor = Style.textColor
         self.completedLabel1.textColor = Style.textColor
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Style.loadTheme()
+        style()
+        
+        
         
     }
 

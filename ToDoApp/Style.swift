@@ -57,7 +57,6 @@ struct Style{
         pickerBackgroundColor = UIColor.groupTableViewBackground
         navigationBarTitleColor = UIColor.init(netHex: 0x0064ee)
         navigationBarColor = UIColor.init(netHex: 0xb1ebf0)
-        //print("White")
     }
     
     static func darkMode() {
@@ -73,7 +72,6 @@ struct Style{
         pickerBackgroundColor = UIColor.white
         navigationBarTitleColor = UIColor.orange
         navigationBarColor = UIColor.init(netHex: 0x000004)
-        //print("Black")
     }
     
     
