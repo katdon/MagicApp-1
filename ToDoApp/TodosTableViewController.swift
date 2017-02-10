@@ -13,10 +13,13 @@ class TodosTableViewController: UITableViewController {
     @IBOutlet weak var todosTableView: UITableView!
     var listData = [[String: AnyObject]]()
     
+    let defaults = UserDefaults.standard
     
-    func load() {
-        let url:String = "https://magic-todo.herokuapp.com/api/todos"
-        let urlRequest = URL(string: url)
+    func loadTasks() {
+        let url = defaults.value(forKey: "url") as! String
+        let login = defaults.value(forKey: "login") as! String
+        let myUrl = url + "login/" + login
+        let urlRequest = URL(string: myUrl)
         
         URLSession.shared.dataTask(with: urlRequest!, completionHandler: {
             (data, response, error) in
@@ -37,12 +40,12 @@ class TodosTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
-        load()
+        loadTasks()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        load()
+        loadTasks()
         self.tableView.backgroundColor = Style.backgroundColor
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -149,7 +152,7 @@ class TodosTableViewController: UITableViewController {
     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        loadTasks()
         Style.loadTheme()
         
         self.view.backgroundColor = Style.backgroundColor

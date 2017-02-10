@@ -10,20 +10,16 @@ import UIKit
 
 class EditViewController: UIViewController {
     
+    let defaults = UserDefaults.standard
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var completedLabel: UILabel!
     @IBOutlet weak var priorityField: UITextField!
     @IBOutlet weak var completedValue: UISlider!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var noteField: UITextField!
-    
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var noteLabel: UILabel!
-    
     @IBOutlet weak var completedLabel1: UILabel!
-    
     @IBOutlet weak var priorityLabel: UILabel!
 
     var taskID: String = "#"
@@ -53,10 +49,11 @@ class EditViewController: UIViewController {
     }
     
     func editTask() {
-        let url:String = "https://magic-todo.herokuapp.com/api/todos/" + taskID
-        print(taskID)
         
-        let myUrl = URL(string: url)
+        let url = defaults.value(forKey: "url") as! String
+        let login = defaults.value(forKey: "login") as! String
+        
+        let myUrl = URL(string: url + taskID)
         
         var request = URLRequest(url: myUrl!)
         request.httpMethod = "PUT"
@@ -72,7 +69,7 @@ class EditViewController: UIViewController {
         }
         
         let mapDict = ["note" : "First", "completed" : "Second"]
-        let json = [ "name" : name, "note" : note, "completed" : completed, "priority" : priority, "dict" : mapDict] as [String : Any]
+        let json = [ "name" : name, "note" : note, "login" : login, "completed" : completed, "priority" : priority, "dict" : mapDict] as [String : Any]
         
         let postString = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
         

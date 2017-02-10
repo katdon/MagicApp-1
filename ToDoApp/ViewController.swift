@@ -17,7 +17,11 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        let defaults = UserDefaults.standard
         super.viewDidLoad()
+         let login = defaults.value(forKey: "login") as! String
+        
+        print("SIemkaaa  " + login)
     }
     
     override func viewWillAppear(_ animated: Bool) {

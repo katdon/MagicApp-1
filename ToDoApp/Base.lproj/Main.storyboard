@@ -627,11 +627,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tzK-zz-EfH" id="lZi-8p-q8u">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MD8-fb-A62">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -881,7 +881,7 @@
         <!--Login-->
         <scene sceneID="7Mp-il-03h">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" autoresizesArchivedViewToFullSize="NO" title="Login" id="N4Y-AB-cU7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" autoresizesArchivedViewToFullSize="NO" title="Login" id="N4Y-AB-cU7" customClass="LoginViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vor-0f-atC"/>
                         <viewControllerLayoutGuide type="bottom" id="vd4-8A-rhV"/>
@@ -933,6 +933,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                        <connections>
+                                                            <action selector="checkLoginField:" destination="N4Y-AB-cU7" eventType="editingChanged" id="ykD-DM-TY0"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -968,7 +971,7 @@
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="ppp-8Q-u9R" kind="show" id="X9e-4u-SSt"/>
+                                                            <segue destination="ppp-8Q-u9R" kind="show" id="4bv-2r-1Pq"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1019,6 +1022,10 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="2KZ-rB-aWw"/>
+                    <connections>
+                        <outlet property="loginButton" destination="MAv-85-jgV" id="JNx-sy-RFZ"/>
+                        <outlet property="loginField" destination="WbX-8t-NaD" id="Nwa-WU-VGZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWx-ym-ste" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

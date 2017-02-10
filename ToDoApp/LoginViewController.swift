@@ -12,47 +12,26 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginField: UITextField!
     
+    let defaults = UserDefaults.standard
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let url:String = "https://magic-todo.herokuapp.com/api/todos/"
+        defaults.set(url, forKey: "url")
+        loginField.text = defaults.value(forKey: "login") as! String?
     }
 
+    @IBAction func checkLoginField(_ sender: UITextField) {
+        defaults.set(loginField.text, forKey: "login")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func loginButtonTapped(_ sender: Any) {
-        
-        if (loginField.text == "") {
-            
-            let myInfoAlert = UIAlertController(title: "", message: "All fields must be filled out!", preferredStyle: .actionSheet)
-            
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            
-            myInfoAlert.addAction(okAction)
-            
-            self.present(myInfoAlert, animated: true, completion: nil)
-            
-            
-        } else {
-            
-            let myAlert = UIAlertController(title: "", message: "Successful log on!", preferredStyle: .actionSheet)
-            
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            
-            myAlert.addAction(okAction)
-            
-            self.present(myAlert, animated: true, completion: nil)
-            
-            
-        }
-        
-        
-
-    }
-
     /*
     // MARK: - Navigation
 
