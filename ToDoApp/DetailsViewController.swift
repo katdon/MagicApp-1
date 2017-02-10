@@ -32,10 +32,17 @@ class DetailsViewController: UIViewController {
     
     var todo = [String: Any]()
     
-    var taskID = "#"
+    var taskID: String = "#"
+    var name: String = ""
+    var note: String = ""
+    var priority: String = "0"
+    var completed: String = "0"
     
-    func wczytaj() {
+    
+    func loadTask() {
         taskID = todo["_id"] as! String!
+        
+        
         idLabel.text = taskID
         nameLabel.text = todo["name"] as! String!
         noteLabel.text = todo["note"] as! String!
@@ -47,7 +54,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        wczytaj()
+        loadTask()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,7 +72,6 @@ class DetailsViewController: UIViewController {
             editViewController.name = nameLabel.text!
             editViewController.priority = priotityLabel.text!
             editViewController.completed = completedLabel.text!
-                
             }
         }
     }
@@ -114,7 +120,8 @@ class DetailsViewController: UIViewController {
         let myAlert = UIAlertController(title: "", message: "Deleted!", preferredStyle: .actionSheet)
         
         let okAction = UIAlertAction(title: "OK", style: .default, handler: {
-            action in self.performSegue(withIdentifier: "deletedTask", sender: self)
+            //_ in self.show(vc, sender: self)
+            _ in _ = self.navigationController?.popViewController(animated: true)
         })
         
         myAlert.addAction(okAction)
@@ -127,7 +134,7 @@ class DetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        loadTask()
         Style.loadTheme()
         
         self.view.backgroundColor = Style.backgroundColor

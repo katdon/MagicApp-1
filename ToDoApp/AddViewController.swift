@@ -103,17 +103,13 @@ class AddViewController: UIViewController {
     
     
     @IBAction func addNewTask(_ sender: Any) {
-        
-        //TodosTableViewController
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodosTableViewController") as UIViewController
-        
         if (priorityField.text != "" && nameField.text != "" && noteField.text != "")
         {
             wyslij()
             let myAlert = UIAlertController(title: "Success", message: "Added!", preferredStyle: .actionSheet)
         
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {
-                _ in self.show(vc, sender: self)
+                _ in _ = self.navigationController?.popViewController(animated: true)
             })
         
             myAlert.addAction(okAction)

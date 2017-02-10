@@ -120,13 +120,16 @@ class EditViewController: UIViewController {
 
             
         } else {
+            //TodosTableViewController
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodosTableViewController") as UIViewController
             
             editTask()
             
             let myAlert = UIAlertController(title: "", message: "Edited!", preferredStyle: .actionSheet)
             
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {
-                action in self.performSegue(withIdentifier: "backEdit", sender: self)
+                _ in self.show(vc, sender: self)
+
             })
             
             myAlert.addAction(okAction)

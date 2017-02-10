@@ -95,6 +95,13 @@ class TodosTableViewController: UITableViewController {
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.textColor = Style.textColor
     }
+    
+    
+    @IBAction func menuButtonTapped(_ sender: UIBarButtonItem) {
+        //TodosTableViewController
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuViewController") as UIViewController
+        self.show(vc, sender: self)
+    }
 
     /*
     // Override to support conditional editing of the table view.
