@@ -138,8 +138,6 @@ class DetailsViewController: UIViewController {
         Style.loadTheme()
         
         self.view.backgroundColor = Style.backgroundColor
-        self.navigationController?.navigationBar.barStyle = Style.barStyle
-        self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
         self.nameLabel.textColor = Style.textColor
         self.noteLabel.textColor = Style.textColor
         self.completedLabel.textColor = Style.textColor
@@ -150,6 +148,10 @@ class DetailsViewController: UIViewController {
         self.priorityLabel1.textColor = Style.textColor
         self.viewId.backgroundColor = Style.backgroundColor
         self.viewEmpty.backgroundColor = Style.backgroundColor
+        self.navigationController?.navigationBar.barStyle = Style.barStyle
+        self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
+        self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
     }
 }
 

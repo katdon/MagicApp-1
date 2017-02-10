@@ -152,13 +152,15 @@ class EditViewController: UIViewController {
         Style.loadTheme()
         
         self.view.backgroundColor = Style.backgroundColor
-        self.navigationController?.navigationBar.barStyle = Style.barStyle
-        self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
         self.nameLabel.textColor = Style.textColor
         self.noteLabel.textColor = Style.textColor
         self.completedLabel.textColor = Style.textColor
         self.priorityLabel.textColor = Style.textColor
         self.completedLabel1.textColor = Style.textColor
+        self.navigationController?.navigationBar.barStyle = Style.barStyle
+        self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
+        self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
         
     }
 
