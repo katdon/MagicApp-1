@@ -47,6 +47,8 @@ class ViewController: UIViewController {
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barStyle = Style.barStyle
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
+        self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
     }
 
 }

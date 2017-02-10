@@ -33,7 +33,7 @@ struct Style{
     
     static var valueTextColor = UIColor.darkGray
     
-    static var navigationBarTintColor = UIColor.init(netHex: 0x007AFF)
+    static var navigationBarTintColor = UIColor.init(netHex: 0x007AFF)//przyciski
     
     static var toolBarBarStyle = UIBarStyle.blackTranslucent
     static var toolBarTintColor = UIColor.white
@@ -41,9 +41,12 @@ struct Style{
     
     static var pickerBackgroundColor = UIColor.groupTableViewBackground
     
+    static var navigationBarTitleColor = UIColor.init(netHex: 0x0064ee) //naglowek
+    static var navigationBarColor = UIColor.init(netHex: 0x0064ee) //tlo
+    
     static func whiteMode() {
         backgroundColor = UIColor.white
-        barStyle = UIBarStyle.default
+        barStyle = UIBarStyle.black
         textColor = UIColor.black
         tableViewCellBackgroundColor = UIColor.white
         contentViewBackgroundColor = UIColor.white
@@ -52,6 +55,8 @@ struct Style{
         toolBarTintColor = UIColor.white
         toolBarBackgroundColor = UIColor.black
         pickerBackgroundColor = UIColor.groupTableViewBackground
+        navigationBarTitleColor = UIColor.init(netHex: 0x0064ee)
+        navigationBarColor = UIColor.init(netHex: 0xb1ebf0)
         //print("White")
     }
     
@@ -66,6 +71,8 @@ struct Style{
         toolBarTintColor = UIColor.black
         toolBarBackgroundColor = UIColor.white
         pickerBackgroundColor = UIColor.white
+        navigationBarTitleColor = UIColor.orange
+        navigationBarColor = UIColor.init(netHex: 0x000004)
         //print("Black")
     }
     
