@@ -40,15 +40,17 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewWillLayoutSubviews() {
-        Style.loadTheme()
-        
+    func style() {
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barStyle = Style.barStyle
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
         self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
+    }
+    override func viewWillLayoutSubviews() {
+        Style.loadTheme()
+        
+        style()
     }
 
 }

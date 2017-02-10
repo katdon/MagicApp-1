@@ -41,5 +41,13 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func style() {
+        self.view.backgroundColor = Style.backgroundColor
+    }
+    override func viewWillLayoutSubviews() {
+        Style.loadTheme()
+        
+        style()
+    }
 
 }
