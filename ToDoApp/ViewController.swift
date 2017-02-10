@@ -24,18 +24,21 @@ class ViewController: UIViewController {
         print("SIemkaaa  " + login)
         
     }
+    func style() {
+        self.view.backgroundColor = Style.backgroundColor
+        self.navigationController?.navigationBar.barStyle = Style.barStyle
+        self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
+        self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
     
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = true
         Style.loadTheme()
         
-        self.view.backgroundColor = Style.backgroundColor
-        self.navigationController?.navigationBar.barStyle = Style.barStyle
-        self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
-        self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
+        style()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,12 +55,7 @@ class ViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         Style.loadTheme()
-        
-        self.view.backgroundColor = Style.backgroundColor
-        self.navigationController?.navigationBar.barStyle = Style.barStyle
-        self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
-        self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
+        style()
     }
 
 }

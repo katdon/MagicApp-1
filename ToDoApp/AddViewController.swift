@@ -22,6 +22,9 @@ class AddViewController: UIViewController {
     @IBOutlet weak var silderValueLabel: UILabel!
     @IBOutlet weak var completedSlider: UISlider!
     
+
+    @IBOutlet weak var addNewTask: UIButton!
+    
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         silderValueLabel.text = "\(Int(sender.value)) %"
     }
@@ -122,11 +125,7 @@ class AddViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        Style.loadTheme()
-        
+    func style() {
         self.view.backgroundColor = Style.backgroundColor
         self.nameLabel.textColor = Style.textColor
         self.noteLabel.textColor = Style.textColor
@@ -137,6 +136,15 @@ class AddViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
         self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
+        self.addNewTask.backgroundColor = Style.buttonColor
+        //self.addNewTask.titleLabel?.textColor = Style.buttonTextColor
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Style.loadTheme()
+        
+        style()
     }
 
 }

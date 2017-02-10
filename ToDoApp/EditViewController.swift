@@ -146,11 +146,7 @@ class EditViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        Style.loadTheme()
-        
+    func style() {
         self.view.backgroundColor = Style.backgroundColor
         self.nameLabel.textColor = Style.textColor
         self.noteLabel.textColor = Style.textColor
@@ -161,6 +157,13 @@ class EditViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
         self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Style.loadTheme()
+        
+        style()
         
     }
 

@@ -375,7 +375,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQz-nE-kmB">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="53"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="Add a new task"/>
+                                                        <state key="normal" title="Add a new task">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="addNewTask:" destination="7y6-Rv-hSP" eventType="touchUpInside" id="94z-et-3Q2"/>
                                                         </connections>
@@ -428,6 +430,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
+                        <outlet property="addNewTask" destination="pQz-nE-kmB" id="uaC-PC-B5Q"/>
                         <outlet property="completedLabel" destination="LLT-eA-3Wo" id="u6s-Sq-yzg"/>
                         <outlet property="completedSlider" destination="Nde-tZ-fL3" id="daa-zT-ZqY"/>
                         <outlet property="nameField" destination="Kh1-Na-gqH" id="Ya9-Cd-LQW"/>
@@ -775,7 +778,9 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU3-cc-SA2">
                                                                 <rect key="frame" x="0.0" y="0.0" width="171.5" height="50"/>
-                                                                <state key="normal" title="Edit"/>
+                                                                <state key="normal" title="Edit">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <segue destination="nmf-nf-nNL" kind="showDetail" identifier="EditTask" action="showViewController:sender:" id="CPD-jk-chh">
                                                                         <segue key="commit" inheritsFrom="parent" id="fyw-UW-V4t"/>
@@ -861,6 +866,7 @@
                         <outlet property="completedLabel" destination="AgZ-Tg-v3L" id="1df-Er-e5E"/>
                         <outlet property="completedLabel1" destination="8ZS-p8-4hU" id="FAd-Dx-ywP"/>
                         <outlet property="createdAtLabel" destination="9JM-Ab-foQ" id="tAa-tI-Ac2"/>
+                        <outlet property="edit" destination="fU3-cc-SA2" id="rTy-ue-tf6"/>
                         <outlet property="idLabel" destination="ehR-AL-Vp1" id="G20-aU-KEP"/>
                         <outlet property="nameLabel" destination="AG0-97-nH5" id="x5u-P4-zYW"/>
                         <outlet property="nameLabel1" destination="BBC-0s-0fQ" id="sRc-2L-9ed"/>

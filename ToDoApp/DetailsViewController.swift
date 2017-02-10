@@ -30,6 +30,8 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var viewEmpty: UIView!
     
+    @IBOutlet weak var edit: UIButton!
+    
     var todo = [String: Any]()
     
     var taskID: String = "#"
@@ -129,14 +131,7 @@ class DetailsViewController: UIViewController {
         self.present(myAlert, animated: true, completion: nil)
     
     }
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadTask()
-        Style.loadTheme()
-        
+    func style() {
         self.view.backgroundColor = Style.backgroundColor
         self.nameLabel.textColor = Style.textColor
         self.noteLabel.textColor = Style.textColor
@@ -152,6 +147,16 @@ class DetailsViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
         self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
+        self.edit.backgroundColor = Style.buttonColor
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadTask()
+        Style.loadTheme()
+        
+        style()
     }
 }
 

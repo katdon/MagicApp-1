@@ -42,7 +42,10 @@ struct Style{
     static var pickerBackgroundColor = UIColor.groupTableViewBackground
     
     static var navigationBarTitleColor = UIColor.init(netHex: 0x0064ee) //naglowek
-    static var navigationBarColor = UIColor.init(netHex: 0x0064ee) //tlo
+    static var navigationBarColor = UIColor.init(netHex: 0xb1ebf0) //tlo
+    
+    static var buttonColor = UIColor.init(netHex: 0x0064ee)
+    static var buttonTextColor = UIColor.black
     
     static func whiteMode() {
         backgroundColor = UIColor.white
@@ -57,6 +60,8 @@ struct Style{
         pickerBackgroundColor = UIColor.groupTableViewBackground
         navigationBarTitleColor = UIColor.init(netHex: 0x0064ee)
         navigationBarColor = UIColor.init(netHex: 0xb1ebf0)
+        buttonColor = UIColor.init(netHex: 0xb1ebf0)
+        //buttonTextColor = UIColor.blue
     }
     
     static func darkMode() {
@@ -72,6 +77,8 @@ struct Style{
         pickerBackgroundColor = UIColor.white
         navigationBarTitleColor = UIColor.orange
         navigationBarColor = UIColor.init(netHex: 0x000004)
+        buttonColor = UIColor.orange
+        //buttonTextColor = UIColor.black
     }
     
     
