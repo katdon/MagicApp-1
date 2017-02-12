@@ -9,21 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InitialNavigationViewController") as UIViewController
-    
+        
     @IBAction func logOutAction(_ sender: UIButton) {
-        self.show(vc, sender: self)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
-        let defaults = UserDefaults.standard
         super.viewDidLoad()
-         let login = defaults.value(forKey: "login") as! String
-        
-        print("SIemkaaa  " + login)
-        
     }
+    
     func style() {
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barStyle = Style.barStyle

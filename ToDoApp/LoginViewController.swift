@@ -22,6 +22,11 @@ class LoginViewController: UIViewController {
         defaults.set(url, forKey: "url")
         loginField.text = defaults.value(forKey: "login") as! String?
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
 
     @IBAction func checkLoginField(_ sender: UITextField) {
         defaults.set(loginField.text, forKey: "login")

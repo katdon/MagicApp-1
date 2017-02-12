@@ -118,14 +118,16 @@ class EditViewController: UIViewController {
             
         } else {
             //TodosTableViewController
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodosTableViewController") as UIViewController
+            //let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodosTableViewController") as UIViewController
+            
             
             editTask()
             
             let myAlert = UIAlertController(title: "", message: "Edited!", preferredStyle: .actionSheet)
             
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {
-                _ in self.show(vc, sender: self)
+                //_ in self.show(vc, sender: self)
+                _ in _ = self.navigationController?.popViewController(animated: true)
 
             })
             
