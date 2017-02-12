@@ -35,30 +35,55 @@ class DetailsViewController: UIViewController {
     var todo = [String: Any]()
     
     var taskID: String = "#"
-    var name: String = ""
-    var note: String = ""
-    var priority: String = "0"
-    var completed: String = "0"
+    
+    func getTask() {
+        let defaults = UserDefaults.standard
+        let url = defaults.value(forKey: "url") as! String
+        let myUrl = url + taskID
+        let urlRequest = URL(string: myUrl)
+        
+        URLSession.shared.dataTask(with: urlRequest!, completionHandler: {
+            (data, response, error) in
+            
+            if(error != nil) {
+                print("Error: error calling GET on task")
+                print(error.debugDescription)
+            } else {
+                do {
+                    guard let todo = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: AnyObject] else {
+                        print("Error: error trying to convert data to JSON")
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.nameLabel.text = (todo["name"] as? String)!
+                        self.noteLabel.text = (todo["note"] as? String)!
+                        self.completedLabel.text = (todo["completed"] as? String)!
+                        self.priotityLabel.text = (todo["priority"] as? String)!
+                        self.createdAtLabel.text = (todo["createdAt"] as? String)!
+                        self.updatedAtLabel.text = (todo["updatedAt"] as? String)!
+                        self.idLabel.text = (todo["_id"] as? String)!
+                    }
+                    
+                    print(todo.description)
+                } catch let error as NSError{
+                    print(error)
+                }
+            }
+        }).resume()
+    }
     
     
     func loadTask() {
         taskID = todo["_id"] as! String!
-        
-        
-        idLabel.text = taskID
-        nameLabel.text = todo["name"] as! String!
-        noteLabel.text = todo["note"] as! String!
-        completedLabel.text = todo["completed"] as! String!
-        priotityLabel.text = todo["priority"] as! String!
-        createdAtLabel.text = todo["createdAt"] as! String!
-        updatedAtLabel.text = todo["updatedAt"] as! String!
+        getTask()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTask()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
