@@ -114,13 +114,7 @@ class EditViewController: UIViewController {
             myInfoAlert.addAction(okAction)
             
             self.present(myInfoAlert, animated: true, completion: nil)
-
-            
         } else {
-            //TodosTableViewController
-            //let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodosTableViewController") as UIViewController
-            
-            
             editTask()
             
             let myAlert = UIAlertController(title: "", message: "Edited!", preferredStyle: .actionSheet)
@@ -134,21 +128,11 @@ class EditViewController: UIViewController {
             myAlert.addAction(okAction)
             
             self.present(myAlert, animated: true, completion: nil)
-
-            
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     func style() {
+        Style.loadTheme()
         self.view.backgroundColor = Style.backgroundColor
         self.nameLabel.textColor = Style.textColor
         self.noteLabel.textColor = Style.textColor
@@ -160,13 +144,10 @@ class EditViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
         self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        Style.loadTheme()
-        
         style()
-        
     }
 
 }

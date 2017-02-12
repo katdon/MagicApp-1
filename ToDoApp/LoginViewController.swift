@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        style()
     }
 
     @IBAction func checkLoginField(_ sender: UITextField) {
@@ -35,6 +36,11 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func style() {
+        Style.loadTheme()
+        self.view.backgroundColor = Style.backgroundColor
     }
     
     /*
@@ -47,9 +53,7 @@ class LoginViewController: UIViewController {
     }
     */
     override func viewWillLayoutSubviews() {
-        Style.loadTheme()
-        
-        self.view.backgroundColor = Style.backgroundColor
+        style()
     }
 
 }

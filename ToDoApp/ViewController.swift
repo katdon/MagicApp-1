@@ -24,14 +24,13 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
         self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
-    
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = true
         Style.loadTheme()
-        
         style()
     }
     

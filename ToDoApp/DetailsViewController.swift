@@ -132,6 +132,8 @@ class DetailsViewController: UIViewController {
     
     }
     func style() {
+        Style.loadTheme()
+        
         self.view.backgroundColor = Style.backgroundColor
         self.nameLabel.textColor = Style.textColor
         self.noteLabel.textColor = Style.textColor
@@ -154,8 +156,6 @@ class DetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadTask()
-        Style.loadTheme()
-        
         style()
     }
 }
