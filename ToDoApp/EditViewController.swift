@@ -81,18 +81,18 @@ class EditViewController: UIViewController {
             (data: Data?, response: URLResponse?, error: Error?) in
             
             if error != nil {
-                print("error=\(error)")
+                print("error: \(error)")
                 return
             }
             
-            print("response = \(response)")
+            print("response: \(response)")
             
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
                 
                 if let parseJSON = json {
-                    let message = parseJSON["message"] as? String
-                    print("message: \(message)")
+                    let message = parseJSON["message"] as! String
+                    print("message: " + message)
                     
                 }
             } catch {

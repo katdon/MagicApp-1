@@ -129,8 +129,8 @@ class DetailsViewController: UIViewController {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
                 
                 if let parseJSON = json {
-                    let message = parseJSON["message"] as? String
-                    print("message: \(message)")
+                    let message = parseJSON["message"] as! String
+                    print("message: " + message)
                     
                 }
             } catch {
@@ -147,7 +147,6 @@ class DetailsViewController: UIViewController {
         let myAlert = UIAlertController(title: "", message: "Deleted!", preferredStyle: .actionSheet)
         
         let okAction = UIAlertAction(title: "OK", style: .default, handler: {
-            //_ in self.show(vc, sender: self)
             _ in _ = self.navigationController?.popViewController(animated: true)
         })
         
