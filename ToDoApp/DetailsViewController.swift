@@ -155,13 +155,13 @@ class DetailsViewController: UIViewController {
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         
         
-        let myAlert = UIAlertController(title: "Are you sure?", message: "Do you want to delete this task?", preferredStyle: .actionSheet)
+        let myAlert = UIAlertController(title: "Are you sure?", message: "Do you want to delete this task?", preferredStyle: .alert)
         
         let yesAction = UIAlertAction(title: "Yes", style: .default, handler: {
             _ in self.deleteTask()
         })
         
-        let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        let noAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         
         myAlert.addAction(yesAction)
         myAlert.addAction(noAction)
