@@ -22,6 +22,8 @@ class EditViewController: UIViewController {
     @IBOutlet weak var completedLabel1: UILabel!
     @IBOutlet weak var priorityLabel: UILabel!
 
+    @IBOutlet weak var editThisTask: UIButton!
+    
     var taskID: String = "#"
     var name: String = ""
     var note: String = ""
@@ -143,6 +145,7 @@ class EditViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = Style.navigationBarTintColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Style.navigationBarTitleColor]
         self.navigationController?.navigationBar.barTintColor = Style.navigationBarColor
+        self.editThisTask.backgroundColor = Style.buttonColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
