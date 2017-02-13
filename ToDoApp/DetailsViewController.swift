@@ -139,10 +139,6 @@ class DetailsViewController: UIViewController {
         }
         
         task.resume()
-    }
-    
-    @IBAction func deleteButtonTapped(_ sender: UIButton) {
-        deleteTask()
         
         let myAlert = UIAlertController(title: "", message: "Deleted!", preferredStyle: .actionSheet)
         
@@ -153,7 +149,26 @@ class DetailsViewController: UIViewController {
         myAlert.addAction(okAction)
         
         self.present(myAlert, animated: true, completion: nil)
+
+    }
     
+    @IBAction func deleteButtonTapped(_ sender: UIButton) {
+        
+        
+        let myAlert = UIAlertController(title: "Are you sure?", message: "Do you want to delete this task?", preferredStyle: .actionSheet)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: {
+            _ in self.deleteTask()
+        })
+        
+        let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        
+        myAlert.addAction(yesAction)
+        myAlert.addAction(noAction)
+        
+        self.present(myAlert, animated: true, completion: nil)
+
+        
     }
     func style() {
         Style.loadTheme()
