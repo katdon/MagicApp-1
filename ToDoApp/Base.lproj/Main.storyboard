@@ -973,6 +973,7 @@
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
+                                                            <action selector="LoginButton:" destination="N4Y-AB-cU7" eventType="touchUpInside" id="R7c-wP-0gE"/>
                                                             <segue destination="BYZ-38-t0r" kind="show" id="WTH-Ag-ZOC"/>
                                                         </connections>
                                                     </button>

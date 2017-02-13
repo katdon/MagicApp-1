@@ -33,6 +33,25 @@ class LoginViewController: UIViewController {
         defaults.set(loginField.text, forKey: "login")
     }
     
+    @IBAction func LoginButton(_ sender: UIButton) {
+        if (loginField.text == "")
+        {
+            let emptyLoginAlert = UIAlertController(title: "Warning", message: "No login! Fill in the blanks!", preferredStyle: .actionSheet)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            emptyLoginAlert.addAction(okAction)
+            self.present(emptyLoginAlert, animated: true, completion: nil)
+        } else {
+            let login = loginField.text as String?
+            let sayHello = "Hello " + login! + "!"
+            
+            let helloAlert = UIAlertController(title: "Success", message: sayHello, preferredStyle: .actionSheet)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            helloAlert.addAction(okAction)
+            self.present(helloAlert, animated: true, completion: nil)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
