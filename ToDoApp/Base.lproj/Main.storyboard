@@ -973,7 +973,7 @@
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="BYZ-38-t0r" kind="show" id="WTH-Ag-ZOC"/>
+                                                            <segue destination="BYZ-38-t0r" kind="show" identifier="login" id="WTH-Ag-ZOC"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

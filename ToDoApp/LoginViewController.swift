@@ -43,15 +43,54 @@ class LoginViewController: UIViewController {
         self.view.backgroundColor = Style.backgroundColor
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier {
+            if ident == "login" {
+                if (loginField.text == "") {
+                    print("Fail login")
+                    
+                    let emptyLoginAlert = UIAlertController(title: "Fail login", message: "You have to fill the field!", preferredStyle: .actionSheet)
+                    
+                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    
+                    emptyLoginAlert.addAction(okAction)
+                    
+                    self.present(emptyLoginAlert, animated: true, completion: nil)
+                    
+                    return false
+                } else if (loginField.text!.characters.count < 3) {
+                    print("Fail login")
+                    
+                    let shortLoginAlert = UIAlertController(title: "Too short login", message: "Please make sure that your login has a minimum of 3 characters.", preferredStyle: .actionSheet)
+                    
+                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    
+                    shortLoginAlert.addAction(okAction)
+                    
+                    self.present(shortLoginAlert, animated: true, completion: nil)
+                    
+                    return false
+                }
+                else {
+                    
+                    return true
+                }
+            }
+        }
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
     override func viewWillLayoutSubviews() {
         style()
     }
